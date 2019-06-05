@@ -4,10 +4,14 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	title := "Jenkins X golang http example 123"
+	title := "Jenkins X Hello World"
+	if value := os.Getenv("TITLE"); value != "" {
+		title = value;
+	}
 
 	from := ""
 	if r.URL != nil {
