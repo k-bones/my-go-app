@@ -10,7 +10,7 @@ import (
 func handler(w http.ResponseWriter, r *http.Request) {
 	title := "Jenkins X Hello World"
 	if value := os.Getenv("TITLE"); value != "" {
-		title = value;
+		title = "Hallo Stefan";
 	}
 
 	from := ""
